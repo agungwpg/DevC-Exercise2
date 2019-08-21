@@ -7,5 +7,36 @@
     <center>
         <h1>Kalkulator</h1>
     </center>
+    <h2 id="hasil">hasil</h2>
+    <input id="input1" type="text">
+    <input id="input2" type="text">
+    <br>
+    <button id="tambah">+</button>
+    <button id="kurang">-</button>
+    <button id="kali">x</button>
+    <button id="bagi">:</button>
+    <script>
+        const [hasil, btnTambah, btnKurang, btnKali, btnBagi] = document.querySelectorAll('#hasil, #tambah, #kurang, #kali, #bagi')
+        function getvalue(){
+            const [input1,input2] = document.querySelectorAll('#input1, #input2')
+            return [parseInt(input1.value), parseInt(input2.value)]
+        } 
+        btnTambah.addEventListener('click',function(){
+            const [i1,i2] = getvalue();
+            hasil.innerHTML = i1 + i2
+        })
+        btnKurang.addEventListener('click',function(){
+            const [i1,i2] = getvalue();
+            hasil.innerHTML = i1 - i2
+        })
+        btnKali.addEventListener('click',function(){
+            const [i1,i2] = getvalue();
+            hasil.innerHTML = i1 * i2
+        })
+        btnBagi.addEventListener('click',function(){
+            const [i1,i2] = getvalue();
+            hasil.innerHTML = i1 / i2
+        })
+    </script>
 </body>
 </html>
